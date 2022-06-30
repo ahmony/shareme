@@ -26,7 +26,6 @@ const Login = () =>
 
     const handleCallbackResponse = (response: GoogleResponse) =>
     {
-        console.log(response)
         localStorage.setItem('user', JSON.stringify(jwt_decode(response.credential)));
         const obj: DecodedCredentials = jwt_decode(response.credential)
         const { name, picture, sub } = obj;

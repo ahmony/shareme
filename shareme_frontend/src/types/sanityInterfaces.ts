@@ -7,3 +7,11 @@ export interface FetchedUser {
     _type: string,
     _updatedAt: string
 }
+
+export interface SearchedPins {
+    destination: string,
+    image: {asset: {url: string}},
+    postedBy: {image: string, userName: string, _id: string},
+    save: [],
+    _id: string
+}   
