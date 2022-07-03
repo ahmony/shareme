@@ -32,7 +32,7 @@ export const searchQuery = (searchTerm: string) => {
     return query;
 }
 
-export const feedQuery = `*[_type == 'pin'] | order(_createAt desc) 
+export const feedQuery = `*[_type == 'pin' && !(_id in path('drafts.**'))] | order(_createAt desc) 
      {
         image {
             asset -> {

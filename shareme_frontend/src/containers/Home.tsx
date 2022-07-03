@@ -9,6 +9,7 @@ import { client } from '../client';
 import logo from '../assets/logo.png'
 import { DecodedCredentials } from "../types/googleAuthInterfaces";
 import { FetchedUser } from "../types/sanityInterfaces";
+import { fetchUser } from "../utils/fetchUser";
 
 
 const Home = () =>
@@ -27,7 +28,7 @@ const Home = () =>
 
     useEffect(() =>
     {
-        const userInfo: DecodedCredentials = JSON.parse(localStorage.getItem('user')!)
+        const userInfo: DecodedCredentials = fetchUser();
         const query = userQuery(userInfo?.sub);
 
         client.fetch(query)
