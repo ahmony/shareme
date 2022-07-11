@@ -12,7 +12,6 @@ const Pin = (props: { pin: SearchedPins }) =>
 {
     const navigate = useNavigate();
     const [postHovered, setPostHovered] = useState(false)
-    const [savingPost, setSavingPost] = useState(false)
     const userInfo = fetchUser();
     const alreadySaved = !!(props?.pin?.save?.filter((item: any) => item.postedBy._id === userInfo.sub).length);
 
@@ -120,7 +119,7 @@ const Pin = (props: { pin: SearchedPins }) =>
             </div>
             <Link
                 to={`user-profile/${userInfo.sub}`}
-                className="flex gap-2 mt-2 items-center max-w-fit	"
+                className="flex gap-2 mt-2 items-center max-w-fit"
             >
                 <img src={props.pin.postedBy?.image} alt="user-profile" className="w-8 h-8 rounded-full object-cover" />
                 <p className="font-semibold capitalize">{props.pin.postedBy?.userName}</p>

@@ -15,3 +15,15 @@ export interface SearchedPins {
     save: [],
     _id: string
 }   
+
+export interface Pin {
+    about: string,
+    category: string,
+    comments: [],
+    destination: string,
+    image: {asset: {url:string}},
+    postedBy: {image: string, userName:string, _id:string},
+    save: [],
+    title: string,
+    _id: string
+}
